@@ -19,7 +19,8 @@ passport.deserializeUser((id, done) => {
 passport.use(new GoogleStrategy({
     clientID: keys.googleClientID,
     clientSecret: keys.googleClientSecret,
-    callbackURL: 'https://floating-anchorage-28249.herokuapp.com/auth/google/callback'
+    callbackURL: '/auth/google/callback', 
+    proxy : true
 }, (accessToken, refreshToken, profile, done) => {
     // console.log('access token: ', accessToken);
     // console.log('refreshToken: ', refreshToken);
