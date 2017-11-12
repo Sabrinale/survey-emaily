@@ -21,23 +21,19 @@ passport.use(new GoogleStrategy({
     clientSecret: keys.googleClientSecret,
     callbackURL: '/auth/google/callback', 
     proxy : true
-}, (accessToken, refreshToken, profile, done) => {
+}, async (accessToken, refreshToken, profile, done) => {
     // console.log('access token: ', accessToken);
     // console.log('refreshToken: ', refreshToken);
-     console.log('profile: ', profile); 
      //id from profile object
     //without.save model instance object stays only in express api not in mongo
     // moi lan refresh thi lai luu id nen ktra ko can dk user moi 
     // tat ca ca dong code chung ta khoi tao asyn action
     //query return a promise
-    User.findOne({ googleId: profile.id })
-    .then(existingUser => {
+    const existingUser = await User.findOne({ googleId: profile.id });
         if (existingUser) {
-             done(null, existingUser);
-        } else { 
-    new User({ googleId: profile.id }).save()
-    .then(user => done(null, user));
-        }
-    });
+            return done(null, existingUser);
+        } 
+        const user = await new User({ googleId: profile.id }).save();
+             done(null, user);
 }
 ));
