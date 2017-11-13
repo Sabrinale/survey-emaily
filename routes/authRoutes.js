@@ -8,7 +8,12 @@ app.get(
 })
 );
 
-app.get('/auth/google/callback', passport.authenticate('google'));
+app.get('/auth/google/callback',
+ passport.authenticate('google'),
+ (req, gi res) => {
+     res.redirect('/surveys');
+ }
+);
 app.get('/api/logout', (req, res) => {
 // logout() attach by passport, when logout call 
 // it takes cookies kill id cookie
