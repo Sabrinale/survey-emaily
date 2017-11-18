@@ -1,0 +1,2 @@
+index for redux 
+App.js rendering layer control of react router

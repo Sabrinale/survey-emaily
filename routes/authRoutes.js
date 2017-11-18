@@ -10,7 +10,7 @@ app.get(
 
 app.get('/auth/google/callback',
  passport.authenticate('google'),
- (req, gi res) => {
+ (req, res) => {
      res.redirect('/surveys');
  }
 );
@@ -18,9 +18,10 @@ app.get('/api/logout', (req, res) => {
 // logout() attach by passport, when logout call 
 // it takes cookies kill id cookie
 req.logout();
-res.send(req.user);
+res.redirect('/');
 });
-app.get('/api/current_user', (req, res) => {
-    res.send(req.user);
+ app.get('/api/current_user', (req, res) => {
+     //console.log(req.user);
+  res.send(req.user);
 });
 };
