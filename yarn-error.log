@@ -1,8 +1,8 @@
 Arguments: 
-  /Users/shire/.nvm/versions/node/v7.10.1/bin/node /usr/local/bin/yarn run dev
+  /Users/shire/.nvm/versions/node/v7.10.1/bin/node /usr/local/bin/yarn install
 
 PATH: 
-  /Users/shire/.nvm/versions/node/v7.10.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/shire/Library/Android/sdk/tools:/Users/shire/Library/Android/sdk/platform-tools
+  /Users/shire/.nvm/versions/node/v7.10.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/shire/Library/Android/sdk/tools:/Users/shire/Library/Android/sdk/platform-tools:/Users/shire/Library/Android/sdk/tools:/Users/shire/Library/Android/sdk/platform-tools
 
 Yarn version: 
   1.0.2
@@ -25,10 +25,14 @@ npm manifest:
     },
     "scripts": {
       "start": "node index.js",
-      //"server": "nodemon index.js",
+      "server": "nodemon index.js",
       "client": "npm run start --prefix client",
       "dev": "concurrently \" npm run server \" \"npm run  client \"",
+  <<<<<<< HEAD
+      "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  =======
       "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm build --prefix"
+  >>>>>>> parent of cf6dd78... bug
     },
     "author": "Sabrina Le",
     "license": "ISC",
@@ -1108,6 +1112,13 @@ Lockfile:
     version "3.0.4"
     resolved "https://registry.yarnpkg.com/lodash.isarray/-/lodash.isarray-3.0.4.tgz#79e4eb88c36a8122af86f844aa9bcd851b5fbb55"
   
+  <<<<<<< HEAD
+  lodash.isplainobject@^4.0.6:
+    version "4.0.6"
+    resolved "https://registry.yarnpkg.com/lodash.isplainobject/-/lodash.isplainobject-4.0.6.tgz#7c526a52d89b45c45cc690b88163be0497f550cb"
+  
+  =======
+  >>>>>>> parent of cf6dd78... bug
   lodash.keys@^3.0.0:
     version "3.1.2"
     resolved "https://registry.yarnpkg.com/lodash.keys/-/lodash.keys-3.1.2.tgz#4dbc0472b156be50a0b286855d1bd0b0c656098a"
@@ -1513,7 +1524,11 @@ Lockfile:
     version "1.4.1"
     resolved "https://registry.yarnpkg.com/punycode/-/punycode-1.4.1.tgz#c0d5a63b2718800ad8e1eb0fa5269c84dd41845e"
   
+  <<<<<<< HEAD
+  qs@6.5.1, qs@~6.5.1:
+  =======
   qs@6.5.1:
+  >>>>>>> parent of cf6dd78... bug
     version "6.5.1"
     resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.1.tgz#349cdf6eef89ec45c12d7d5eb3fc0c870343a6d8"
   
@@ -1670,7 +1685,11 @@ Lockfile:
     version "2.3.24"
     resolved "https://registry.yarnpkg.com/rx/-/rx-2.3.24.tgz#14f950a4217d7e35daa71bbcbe58eff68ea4b2b7"
   
+  <<<<<<< HEAD
+  safe-buffer@5.1.1, safe-buffer@^5.0.1, safe-buffer@^5.1.1, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
+  =======
   safe-buffer@5.1.1, safe-buffer@^5.0.1, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
+  >>>>>>> parent of cf6dd78... bug
     version "5.1.1"
     resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.1.1.tgz#893312af69b2123def71f57889001671eeb2c853"
   
@@ -1844,6 +1863,18 @@ Lockfile:
     version "2.0.1"
     resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
   
+  <<<<<<< HEAD
+  stripe@^5.3.0:
+    version "5.3.0"
+    resolved "https://registry.yarnpkg.com/stripe/-/stripe-5.3.0.tgz#abbe66fde4eb1e4a53873d1c3b2855c41229b752"
+    dependencies:
+      bluebird "^3.5.0"
+      lodash.isplainobject "^4.0.6"
+      qs "~6.5.1"
+      safe-buffer "^5.1.1"
+  
+  =======
+  >>>>>>> parent of cf6dd78... bug
   supports-color@^0.2.0:
     version "0.2.0"
     resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-0.2.0.tgz#d92de2694eb3f67323973d7ae3d8b55b4c22190a"
@@ -2037,7 +2068,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/yallist/-/yallist-2.1.2.tgz#1c11f9218f076089a47dd512f93c6699a6a81d52"
 
 Trace: 
-  SyntaxError: /Users/shire/Desktop/survey-fullstack/server/package.json: Unexpected token / in JSON at position 199
+  SyntaxError: /Users/shire/Desktop/survey-fullstack/server/package.json: Unexpected token < in JSON at position 345
       at JSON.parse (<anonymous>)
       at /usr/local/lib/node_modules/yarn/lib/cli.js:797:57
       at Generator.next (<anonymous>)
