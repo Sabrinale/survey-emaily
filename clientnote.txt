@@ -1,2 +1,6 @@
 index for redux 
 App.js rendering layer control of react router
+
+REDUX FORM 
+handle the state easier
+set up: npm install --save redux-FORM
